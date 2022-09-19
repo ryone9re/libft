@@ -6,7 +6,7 @@
 /*   By: rkurimot <rkurimot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 01:32:29 by rkurimot          #+#    #+#             */
-/*   Updated: 2022/07/27 15:41:46 by rkurimot         ###   ########.fr       */
+/*   Updated: 2022/09/20 01:46:46 by rkurimot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static long	ft_strtol_ten(const char *str)
 		str++;
 	while ('0' <= *str && *str <= '9')
 	{
-		if (i < LONG_MIN / 10)
+		if (i < (LONG_MIN + (*str - '0')) / 10)
 			return (neg);
 		i = i * 10 - (*str - '0');
 		str++;
